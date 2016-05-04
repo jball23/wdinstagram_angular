@@ -1,0 +1,14 @@
+<h2>{{showVm.photo.author}} posted...</h2>
+<div class="show">
+  <button data-ng-hide="editPost" data-ng-click="editPost = !editPost">Edit Post</button>
+  <form data-ng-show="editPost">
+    <input data-ng-model="showVm.photo.author" />
+    <input data-ng-model="showVm.photo.photo_url"/>
+    <textarea data-ng-model="showVm.photo.body"></textarea>
+    <button data-ng-click="showVm.update()">Save</button>
+    <button data-ng-click="showVm.delete()">Delete</button>
+  </form>
+
+  <img data-ng-src="{{showVm.photo.photo_url}}"></img>
+  <p>{{ShowCtrl.photo.body}}</p>
+</div>

@@ -1,0 +1,15 @@
+<div class="index">
+  <form data-ng-submit="indexVm.create()">
+    <input placeholder="Name" data-ng-model="indexVm.newPhoto.author" />
+    <input placeholder="Photo URL" data-ng-model="indexVm.newPhoto.photo_url" />
+    <textarea placeholder="Comment" data-ng-model="indexVm.newPhoto.body"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  <div data-ng-repeat="photo in indexVm.photos">
+    <p>{{photo.author}} posted...</p>
+    <a data-ui-sref="instaShow({id: photo.id})">
+      <img data-ng-src="{{photo.photo_url}}"></img>
+    </a>
+    <p>{{photo.body}}</p>
+  </div>
+</div>
